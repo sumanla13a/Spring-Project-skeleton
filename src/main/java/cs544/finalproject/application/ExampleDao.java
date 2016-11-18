@@ -21,24 +21,25 @@ public class ExampleDao implements IExampleDao {
 	@Override
 	@Transactional
 	public void saveExample(ExampleDomain e) {
-		sf.openSession().persist(e);
+		sf.getCurrentSession().persist(e);
 	}
 	@Override
 	@Transactional
 	public void updateExample(ExampleDomain e) {
-		sf.openSession().saveOrUpdate(e);
+		sf.getCurrentSession().saveOrUpdate(e);
 	}
 	@Override
 	@Transactional
 	public ExampleDomain loadExample(int eNo) {
-		return (ExampleDomain) sf.openSession().get(ExampleDomain.class, eNo);
+		return (ExampleDomain) sf.getCurrentSession().get(ExampleDomain.class, eNo);
 	}
 	@Override
 	@SuppressWarnings("unchecked")
 	public Collection<ExampleDomain> getExamples() {
 		// To prevent our Lazy Initialization problems
 		// we don't have open session in view, so instead we have to eagerly load!
-		return sf.openSession().createQuery("select distinct e from Example e").list();
+		//	TODO: check why getCurrentSession throws error here
+		return sf.openSession().createQuery("select distinct e from ExampleDomain e").list();
 	}
 
 }

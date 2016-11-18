@@ -8,6 +8,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="Example")
 public class ExampleDomain {
+	@Override
+	public String toString() {
+		return "ExampleDomain [id=" + id + ", example_name=" + example_name + ", example_value=" + example_value + "]";
+	}
 	@Id
 	@GeneratedValue
 	private int id;
