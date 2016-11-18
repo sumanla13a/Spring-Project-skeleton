@@ -28,7 +28,7 @@ public class ExampleCtrl {
 	@ResponseStatus(HttpStatus.OK)
 	public String getAllExamples(Model model) {
 		Collection<ExampleDomain> e = exampleService.getExamples();
-		e.forEach(System.out::println);
+//		e.forEach(System.out::println);
 		return "home2";
 	}
 	
