@@ -3,5 +3,4 @@
 .settings
 target
 src/main/webapp/WEB-INF/web.xml
-src/main/webapp/WEB-INF/servlet-context.xml
-src/main/webapp/WEB-INF/root-context.xml
+src/main/webapp/WEB-INF/spring/
