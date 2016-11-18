@@ -1,8 +1,12 @@
 package cs544.finalproject.application;
 
 import javax.persistence.*;
-
+/**
+ * @author suman
+ * Description: Example domain.
+ */
 @Entity
+@Table(name="Example")
 public class ExampleDomain {
 	@Id
 	@GeneratedValue
